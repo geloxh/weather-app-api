@@ -7,7 +7,7 @@ Developing independent Weather API for w Weather App.
 
 ---
 
-## 0. System Overview
+## System Overview
 
 ```
                      ┌─────────────────────┐
