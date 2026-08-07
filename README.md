@@ -46,3 +46,6 @@ This runs the API + Redis together, with hot-reload on code changes.
 | `GET /v1/forecast/hourly?lat=&lon=&hours=48` |    Hourly forecast   |
 | `GET /v1/forecast/daily?lat=&lon=&hours=48`  |     Daily forecast   |
 |         `GET /v1/search?query=`              | Geocode a place name |
+
+
+### geloxh
