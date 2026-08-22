@@ -37,3 +37,15 @@ async def cache_get(key: str) -> Any | None:
         _memory_store.pop(key, None)
         return None
     return json.loads(raw)
+
+async def cache_set(key: str, value: Any, ttl_seconds: int) -> None:
+    raw = json.dumps(value)
+    client = _get_redis()
+    if client:
+        await client.set(key, raw, ex=ttl_seconds)
+        return
+
+    _memory_store[key] = (time.time() + ttl_seconds, raw)
+
+def make_cache_key(*parts: str) -> str:
+    return ":".join(str(p) for p in parts)
