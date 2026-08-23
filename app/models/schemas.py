@@ -61,3 +61,6 @@ class GeocodeResult(BaseModel):
     longitude: float
     country: str | None = None
     admin1: str | None = None # state/region
+
+class SearchResponse(BaseModel):
+    results: list[GeocodeResult]
